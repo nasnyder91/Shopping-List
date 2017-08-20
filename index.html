@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Shopping List</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="fetchItems(), updateProgress()">
+  <!-- Title -->
+  <nav class="navbar navbar-default text-center">
+    <h1>Shopping List</h1>
+  </nav>
+
+
+  <!-- Add Item Form -->
+  <div class="container text-center">
+    <form class="form-inline" id="itemForm">
+      <div class="form-group" id="itemFormGroup">
+        <input type="text" class="form-control" id="item" placeholder="Enter Item">
+        <button type="submit" class="btn btn-success" id="submitBtn" name="button">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Shopping List -->
+  <div class="container">
+    <ul class="list-group text-center" id="itemList">
+    </ul>
+  </div>
+
+  <!-- Shopping Progress -->
+  <div class="progress">
+    <div class="progress-bar progress-bar-success progress-bar-striped active" id="progressBar" style="width:0%;">
+      0%
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade bs-example-modal" id="editModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="form-inline">
+            <div class="form-group">
+              <input type="text" class="form-control" id="editedItem" placeholder="Enter Item">
+              <button type="button" class="btn btn-success" onclick="submitEdited()" id="editSubmitBtn">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" id="cancelEdit" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"> </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
